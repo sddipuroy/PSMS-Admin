@@ -8,8 +8,6 @@ if(isset($_POST['create_btn'])){
     $t_gender = $_POST['t_gender'];
     $t_password = $_POST['t_password'];
 
-    $admin_id = $_SESSION['admin_loggedin'][0]['id'];
-
     //Teacher Mobile Count
     $mobileCout = teacherCount('mobile',$t_mobile);
     //Teacher Email Count
@@ -58,53 +56,53 @@ if(isset($_POST['create_btn'])){
 </div>
 
 <div class="row">
-<div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-    <div class="card-body">
-        <?php if(isset($error)) :?>
-            <div class="alert alert-danger"><?php echo $error; ?></div>
-        <?php endif; ?>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <?php if(isset($error)) :?>
+                    <div class="alert alert-danger"><?php echo $error; ?></div>
+                <?php endif; ?>
 
-        <?php if(isset($success)) :?>
-            <div class="alert alert-success"><?php echo $success; ?></div>
-        <?php endif; ?>
-        <form class="forms-sample" method="POST" action="">
-            <div class="form-group">
-                <label for="t_name">Teacher Name :</label>
-                <input type="text" name="t_name" class="form-control" id="t_name" placeholder="Teacher Name">
+                <?php if(isset($success)) :?>
+                    <div class="alert alert-success"><?php echo $success; ?></div>
+                <?php endif; ?>
+                <form class="forms-sample" method="POST" action="">
+                    <div class="form-group">
+                        <label for="t_name">Teacher Name :</label>
+                        <input type="text" name="t_name" class="form-control" id="t_name" placeholder="Teacher Name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="t_email">Teacher Email :</label>
+                        <input type="email" name="t_email" class="form-control" id="t_email" placeholder="Teacher Email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="t_mobile">Teacher Mobile :</label>
+                        <input type="text" name="t_mobile" class="form-control" id="t_mobile" placeholder="Teacher Mobile">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="t_address">Teacher Address :</label>
+                        <input type="text" name="t_address" class="form-control" id="t_address" placeholder="Teacher Address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender :</label> <br>
+                        <label><input type="radio" value="Male" name="t_gender"> Male</label> &nbsp; &nbsp;
+                        <label><input type="radio" value="Female" name="t_gender"> Female</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="t_password">Password :</label>
+                        <input type="password" name="t_password" class="form-control" id="t_password" placeholder="Password">
+                    </div>
+                    
+                    <button type="submit" name="create_btn" class="btn btn-gradient-primary mr-2">Create Teacher Account</button>
+                </form>
             </div>
-            
-            <div class="form-group">
-                <label for="t_email">Teacher Email :</label>
-                <input type="email" name="t_email" class="form-control" id="t_email" placeholder="Teacher Email">
-            </div>
-            
-            <div class="form-group">
-                <label for="t_mobile">Teacher Mobile :</label>
-                <input type="text" name="t_mobile" class="form-control" id="t_mobile" placeholder="Teacher Mobile">
-            </div>
-            
-            <div class="form-group">
-                <label for="t_address">Teacher Address :</label>
-                <input type="text" name="t_address" class="form-control" id="t_address" placeholder="Teacher Address">
-            </div>
-            
-            <div class="form-group">
-                <label>Gender :</label> <br>
-                <label><input type="radio" value="Male" name="t_gender"> Male</label> &nbsp; &nbsp;
-                <label><input type="radio" value="Female" name="t_gender"> Female</label>
-            </div>
-            
-            <div class="form-group">
-                <label for="t_password">Password :</label>
-                <input type="password" name="t_password" class="form-control" id="t_password" placeholder="Password">
-            </div>
-            
-            <button type="submit" name="create_btn" class="btn btn-gradient-primary mr-2">Create Teacher Account</button>
-        </form>
+        </div>
     </div>
-    </div>
-</div>
 </div>
 
 <?php require_once('footer.php'); ?>

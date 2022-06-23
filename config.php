@@ -40,3 +40,12 @@ function teacherCount($col,$val){
 //     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
 //     return $result[0][$col];
 // }
+
+// Get Teacher Data
+function Teacher($col,$id){
+    global $pdo;
+    $stm=$pdo->prepare("SELECT $col FROM teachers WHERE id=?");
+    $stm->execute(array($id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $result[0][$col];
+}
