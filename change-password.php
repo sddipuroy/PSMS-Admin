@@ -36,6 +36,7 @@ if(isset($_POST['change_btn'])){
         $success = "Password Change Successfully!";
 
     }
+    
 }
 
 ?>

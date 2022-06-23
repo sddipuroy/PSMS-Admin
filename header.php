@@ -14,7 +14,7 @@ if(!isset($_SESSION['admin_loggedin'])){
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Purple Admin</title>
+  <title>PSMS Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
@@ -240,7 +240,7 @@ if(!isset($_SESSION['admin_loggedin'])){
             <div class="collapse" id="ui-2">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="">All Teachers</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Search</a></li>
+                <li class="nav-item"> <a class="nav-link" href="teacher-add-new.php">Add New</a></li>
               </ul>
             </div>
           </li>
