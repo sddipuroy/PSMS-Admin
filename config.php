@@ -24,9 +24,18 @@ catch(PDOException $m){
 //     return $count;
 // }
 
-function teacherCount($col,$val){
+
+// function teacherCount($col,$val){
+//     global $pdo;
+//     $stm=$pdo->prepare("SELECT $col FROM teachers WHERE $col=?");
+//     $stm->execute(array($val));
+//     $count = $stm->rowCount();
+//     return $count;
+// }
+
+function getCount($tbl,$col,$val){
     global $pdo;
-    $stm=$pdo->prepare("SELECT $col FROM teachers WHERE $col=?");
+    $stm=$pdo->prepare("SELECT $col FROM $tbl WHERE $col=?");
     $stm->execute(array($val));
     $count = $stm->rowCount();
     return $count;
