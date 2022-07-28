@@ -1,29 +1,31 @@
 <?php require_once('header.php'); 
 
 if(isset($_POST['create_btn'])){
-    $sub_name = $_POST['sub_name'];
-    $sub_code = $_POST['sub_code'];
-    $sub_type = $_POST['sub_type'];
+    $class_name = $_POST['class_name'];
+    $subject_name = $_POST['subject_name'];
+    $time_from = $_POST['time_from'];
+    $time_to = $_POST['time_to'];
+    $room_no = $_POST['room_no'];
+    $day = $_POST['day'];
+    // Get Teacher Name From Seleceted Subject
+    $teacher_id = getSubjectTeacher($subject_name);
 
-    //Subject Code Count
-    $codeCout = getCount('subjects','code',$sub_code);
-
-    if(empty($sub_name)){
+    if(empty($class_name)){
+        $error = "Class Name is Required!";
+    }
+    else if(empty($subject_name)){
         $error = "Subject Name is Required!";
     }
-    else if(empty($sub_code)){
-        $error = "Subject Code is Required!";
+    else if(empty($time_from)){
+        $error = "Time From is Required!";
     }
-    else if(empty($sub_type)){
-        $error = "Subject Type is Required!";
-    }
-    else if($codeCout != 0){
-        $error = "Subject Code is Already Used!";
+    else if(empty($time_to)){
+        $error = "Time To is Required!";
     }
     else{
-        $insert = $pdo->prepare("INSERT INTO subjects(name,code,type) VALUES (?,?,?)");
-        $insert->execute(array($sub_name,$sub_code,$sub_type));
-        $success = "Subject Create Success!";
+        $insert = $pdo->prepare("INSERT INTO class_routine(class_name,subject_id,teacher_id,time_from,time_to,room_no,day) VALUES (?,?,?,?,?,?,?)");
+        $insert->execute(array($class_name,$subject_name,$teacher_id,$time_from,$time_to,$room_no,$day));
+        $success = "Routine Create Success!";
     }
 }
 ?>
@@ -57,6 +59,7 @@ if(isset($_POST['create_btn'])){
                         $lists = $stm->fetchAll(PDO::FETCH_ASSOC);
                         ?>
                         <select name="class_name" id="class_name" class="form-control">
+                            <option value="">Select Class</option>
                             <?php 
                             foreach($lists as $list):
                             ?>
@@ -68,6 +71,19 @@ if(isset($_POST['create_btn'])){
                     <div class="form-group">
                         <label for="subject_name">Select Subject :</label>
                         <select name="subject_name" id="subject_name" class="form-control"></select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject_name">Select Day :</label>
+                        <select name="day" id="subject_name" class="form-control">
+                            <option value="">Select Day</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                        </select>
                     </div>
 
                     <div class="form-group">

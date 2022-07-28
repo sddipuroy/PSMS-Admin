@@ -190,7 +190,7 @@ if(!isset($_SESSION['admin_loggedin'])){
               </ul>
             </div>
           </li>
-
+           
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-5" aria-expanded="false" aria-controls="ui-5">
               <span class="menu-title">Classes</span>

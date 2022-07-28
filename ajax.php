@@ -9,7 +9,7 @@ if(isset($_POST['class_id'])){
     $subject_ids = $stm->fetchAll(PDO::FETCH_ASSOC);
     $subject_ids = $subject_ids[0]['subjects'];
     $subject_list = json_decode($subject_ids);
-    
+     
     // $get_subject_list = [];
     // foreach($subject_list as $new_subject){
     //     $get_subject_list[][$new_subject] = getSubjectName($new_subject);
