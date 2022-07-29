@@ -156,17 +156,10 @@ if(!isset($_SESSION['teacher_loggedin'])){
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-6" aria-expanded="false" aria-controls="ui-6">
+            <a class="nav-link" href="class-routine.php">
               <span class="menu-title">Class Rutine</span>
-              <i class="menu-arrow"></i>
               <i class="mdi mdi-crosshairs-gps menu-icon"></i>
             </a>
-            <div class="collapse" id="ui-6">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">All Class Rutine</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Add New</a></li>
-              </ul>
-            </div>
           </li>
 
           <li class="nav-item">
