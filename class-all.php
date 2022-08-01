@@ -42,7 +42,6 @@
                         foreach($subject_list as $new_subject){
                             echo getSubjectName($new_subject)."<br>";
                         } 
-                        
                         ?></td>
                         <td>
                             <a href="" class="btn btn-sm btn-warning"> <i class="mdi mdi-table-edit"></i> </a> &nbsp;

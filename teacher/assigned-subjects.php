@@ -5,7 +5,7 @@
     <span class="page-title-icon bg-gradient-primary text-white mr-2">
       <i class="mdi mdi-account-multiple "></i>                 
     </span>
-    Assigned Class Routine
+    Assigned Subjects
   </h3>
 </div>
 <div class="row">
@@ -16,27 +16,23 @@
                 <thead>
                     <tr>
                         <th style="width:20px;">#</th>
-                        <th>Class Name</th>
-                        <th>Action</th>
+                        <th>Subject Name</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
                     $teacher_id = $_SESSION['teacher_loggedin'][0]['id'];
 
-                    $stm = $pdo->prepare("SELECT DISTINCT class_name FROM class_routine WHERE teacher_id=? ORDER BY class_name ASC");
+                    $stm = $pdo->prepare("SELECT * FROM assign_teachers WHERE teacher_id=?");
                     $stm->execute(array($teacher_id));
-                    $classList = $stm->fetchAll(PDO::FETCH_ASSOC);
-                    $i = 1;
+                    $list = $stm->fetchAll(PDO::FETCH_ASSOC);
+                    $i = 1; 
 
-                    foreach($classList as $list):
+                    foreach($list as $list):
                     ?>
                     <tr>
                         <td><?php echo $i;$i++; ?></td>
-                        <td><?php echo getClassName($list['class_name'],'class_name'); ?></td>
-                        <td>
-                            <a href="routine-details.php?id= <?php echo $list['class_name'];?>" class="btn btn-sm btn-success"> <i class="mdi mdi-eye"></i> View Class Routine </a> 
-                        </td>
+                        <td><?php echo getSubjectName($list['subject_id']); ?></td>
                     </tr>
                     <?php endforeach ;?>
                 </tbody>

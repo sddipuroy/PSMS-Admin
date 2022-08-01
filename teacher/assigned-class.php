@@ -5,7 +5,7 @@
     <span class="page-title-icon bg-gradient-primary text-white mr-2">
       <i class="mdi mdi-account-multiple "></i>                 
     </span>
-    Assigned Class Routine
+    Assigned Class
   </h3>
 </div>
 <div class="row">
@@ -35,7 +35,7 @@
                         <td><?php echo $i;$i++; ?></td>
                         <td><?php echo getClassName($list['class_name'],'class_name'); ?></td>
                         <td>
-                            <a href="routine-details.php?id= <?php echo $list['class_name'];?>" class="btn btn-sm btn-success"> <i class="mdi mdi-eye"></i> View Class Routine </a> 
+                            <a href="class-details.php?id= <?php echo $list['class_name'];?>" class="btn btn-sm btn-success"> <i class="mdi mdi-eye"></i> View Class Details </a> 
                         </td>
                     </tr>
                     <?php endforeach ;?>
