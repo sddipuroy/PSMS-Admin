@@ -15,7 +15,7 @@ if(isset($_POST['submit_btn'])){
     $stm=$pdo->prepare("SELECT * FROM attendance WHERE class_id=? AND subject_id=? AND teacher_id=? AND attendance_date=?");
     $stm->execute(array($class_id,$subject_id,$teacher_id,$att_date));
     $attCount = $stm->rowCount();
-    // by Default
+    // By Default
     $studentCount = NULL;
 
     if(empty($class_id)){
@@ -82,7 +82,6 @@ if(isset($_POST['submit_btn'])){
                             value="<?php echo $list['class_name'];?>"><?php echo getClassName($list['class_name'],'class_name');?></option>
                             <?php endforeach;?>
                         </select>
-
                     </div> 
                 </div>
                 <div class="col-md-3">
@@ -139,7 +138,6 @@ if(isset($_POST['submit_btn'])){
                         $stList = $studentList[0]['student_data'];
                         $stList = json_decode($stList,true); 
                         foreach($stList as $newList) :
-
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>

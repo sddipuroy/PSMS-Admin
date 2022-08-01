@@ -167,7 +167,6 @@ if(!isset($_SESSION['admin_loggedin'])){
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -235,6 +234,13 @@ if(!isset($_SESSION['admin_loggedin'])){
           </li>
 
           <li class="nav-item">
+                <a class="nav-link" href="attendance.php">
+                <span class="menu-title">Attendance</span>
+                <i class="mdi mdi-home menu-icon"></i>
+                </a>
+            </li>
+
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-2" aria-expanded="false" aria-controls="ui-2">
               <span class="menu-title">Teachers</span>
               <i class="menu-arrow"></i>
@@ -262,14 +268,6 @@ if(!isset($_SESSION['admin_loggedin'])){
               </ul>
             </div>
           </li>
-
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="pages/icons/mdi.html">
-              <span class="menu-title">Icons</span>
-              <i class="mdi mdi-contacts menu-icon"></i>
-            </a>
-          </li> -->
-
         </ul>
       </nav>
       <!-- partial -->
