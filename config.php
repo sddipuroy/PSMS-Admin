@@ -57,6 +57,20 @@ function getSubjectTeacher($id){
     return $result[0]['teacher_id'];
 }
 
+// Get Teacher Name From Subject ID
+function getSubjectTeacherName($id){
+    global $pdo;
+    $stm=$pdo->prepare("SELECT teacher_id FROM assign_teachers WHERE subject_id=?");
+    $stm->execute(array($id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    $teacher_id =  $result[0]['teacher_id'];
+
+    $stm=$pdo->prepare("SELECT name FROM teachers WHERE id=?");
+    $stm->execute(array($teacher_id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return  $result[0]['name'];
+}
+
 function getClassName($id,$col){
     global $pdo;
     $stm=$pdo->prepare("SELECT $col FROM class WHERE id=?");
@@ -64,6 +78,20 @@ function getClassName($id,$col){
     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
     return $result[0][$col];
 }
+
+// Get Exam Name form Exam ID
+function getExamName($id){
+    if($id == 1){
+        return "First Term Exam";
+    }
+    else if($id == 2){
+        return "Second Term Exam"; 
+    }
+    else if($id == 3){
+        return "Final Term Exam"; 
+    }
+}
+
 
 // Get Teacher Info
 function getTeacherInfo($id,$col){

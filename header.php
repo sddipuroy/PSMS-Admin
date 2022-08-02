@@ -238,7 +238,20 @@ if(!isset($_SESSION['admin_loggedin'])){
                 <span class="menu-title">Attendance</span>
                 <i class="mdi mdi-home menu-icon"></i>
                 </a>
-            </li>
+          </li>
+
+          <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-66" aria-expanded="false" aria-controls="ui-66">
+                <span class="menu-title">Students Marks</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-66">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="student-marks.php">Students Marks</a></li>
+                </ul>
+                </div>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-2" aria-expanded="false" aria-controls="ui-2">
