@@ -137,7 +137,7 @@ if(isset($_POST['submit_btn'])){
             </table> 
             <?php if(count($notSumitted) == 0) : ?>
             <br><br>
-            <a href="#" class="btn btn-info">Get Marks Calculation</a>
+            <a href="student-marks-details-2.php?class=<?php echo $_POST['select_class'];?>" class="btn btn-info">Get Marks Calculation</a>
             <?php endif;?>
         </div>
     </div>
