@@ -112,6 +112,13 @@ function getTeacherInfo($id,$col){
 //     return $result[0][$col];
 // }
 
+function Student($id,$col){
+    global $pdo;
+    $stm=$pdo->prepare("SELECT $col FROM students WHERE id=?");
+    $stm->execute(array($id));
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $result[0][$col];
+}
 
 // Get Teacher Data
 function Teacher($col,$id){
