@@ -128,3 +128,7 @@ function Teacher($col,$id){
     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
     return $result[0][$col];
 }
+
+
+// Requre Function File
+require_once('functions.php');
