@@ -218,6 +218,13 @@ if(!isset($_SESSION['teacher_loggedin'])){
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+                <a class="nav-link"  href="teacher-payment-history.php" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Salary History</span> 
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+
+            </li>
         </ul>
       </nav>
       <!-- partial -->
